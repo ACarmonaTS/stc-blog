@@ -1,0 +1,96 @@
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ad3201;
+  --ligth-transparent: #ffffffcc;
+  --primary-color-transparent: #b844006e;
+  --secondary-color-transparent: #00000099;
+  --ligth-background: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+}
+
+main {
+  z-index: 5;
+}
+
+body::-webkit-scrollbar {
+  width: 8px; 
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--primary-color-transparent);  
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);   
+  border-radius: 5px;   
+}
+
+ul {
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+textarea {
+  resize: none;
+  outline: none;
+}
+
+input {
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, rgba(202, 57, 81, 0.712), var(--primary-color));
+}
+
+
+@media (orientation: portrait) {
+  p,
+  article {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 15%;
+  }
+
+  @keyframes reveal {
+    from {
+      scale: 0.2;
+    }
+    to {
+      scale: 1;
+    }
+  }
+}
+
+@media (min-height: 768px) and (orientation: landscape) {
+  p,
+  article {
+    animation: reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 10% cover 15%;
+  }
+
+  @keyframes reveal {
+    from {
+      scale: 0.2;
+    }
+    to {
+      scale: 1;
+    }
+  }
+}
